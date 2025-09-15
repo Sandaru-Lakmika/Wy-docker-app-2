@@ -1,35 +1,22 @@
-// frontend/src/App.js
-import logo from "./logo.svg";
-import "./App.css";
-import React, { useEffect } from "react";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Import components
+import LandingPage from './components/LandingPage';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
-  const fetchData = async () => {
-    const res = await fetch("http://localhost:4000/");
-    console.log(res);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-50">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
