@@ -18,6 +18,7 @@ const SignIn = () => {
             
             if (response.data.token) {
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('username', response.data.username);
                 navigate('/dashboard'); // Navigate to dashboard after successful login
             }
         } catch (err) {
