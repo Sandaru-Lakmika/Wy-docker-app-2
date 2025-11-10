@@ -1,5 +1,3 @@
 To run application - docker-compose up
 
-```
-lets create the jenkin pipeline
-```
+To start jenkins 8080 - sudo systemctl start jenkins / jenkins start
